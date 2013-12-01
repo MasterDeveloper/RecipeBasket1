@@ -36,16 +36,17 @@ body, input, select, textarea{
 	color: @textColor;
 }
 body{
-	background:url(../images/body-pattren.png) #ffe8c8;
+	background:#fbfbfb;
 	overflow-x:hidden;
 }
 
 /* Headings
 ______________________*/
-.heading(@weight, @size, @family, @color, @margin){
+.heading(@weight, @size, @family, @color, @margin, @case: inherit){
 	font: @weight @size @family;
 	color: @color;
 	margin: @margin;
+	text-transform:@case;
 	
 }
 h1{.heading( normal,  35px,  @altFamily, @headingsColor, 0 0 10px);
@@ -56,10 +57,10 @@ h1{.heading( normal,  35px,  @altFamily, @headingsColor, 0 0 10px);
 		font-weight:bold;
 	}
 }
-h2{.heading( normal,  33px,  @altFamily, @SubheadingsColor, 0 0 10px);}
-h3{.heading( bold,  25px,  @baseFamily, @themeColor, 0 0 10px);}
-h4{.heading( normal,  23px,  @baseFamily, @themeColor, 0 0 10px);}
-h5{.heading( normal,  14px,    @secFamily, black, 0 0 10px);}
+h2{.heading( 100,  36px,  @thirdFamily, #000, 0 0 10px, uppercase);}
+h3{.heading( normal,  22px,  @thirdFamily, #000, 0 0 10px, uppercase);	}
+h4{.heading( 100,  26px,  @thirdFamily, #000, 0 0 10px, uppercase);}
+h5{.heading( normal,  16px,  @thirdFamily, #000, 0 0 10px, uppercase);}
 
 
 .detailed-recipe{
@@ -68,6 +69,9 @@ h5{.heading( normal,  14px,    @secFamily, black, 0 0 10px);}
 		font-size:23px;
 		font-family:@thirdFamily;
 	}
+}
+storng{
+	.heading( normal,  @baseFont,  @baseFamily, inherit, 0);
 }
 
 /* Links
@@ -139,6 +143,22 @@ a.thumbnail{
 /************************
 	Lists Settings 
 *************************/
+.thumbs-wrap{
+	[class^="col-"]{
+		> [class^="icon-"]{
+			color:white;
+			float:left;
+			margin:3px 10px 3px 0;	
+			padding:3px 6px;
+			background:@gray;
+			.radius(5px);
+			
+		}
+	}
+	span{
+		display:block;
+	}
+}
 
 /* Header
 ______________________*/
@@ -149,8 +169,6 @@ ______________________*/
 	background:url(../images/header-pattren.png);
 
 }
-
-
 .header-top{
 	position:relative;
 	span{
@@ -193,12 +211,23 @@ ______________________*/
 	height:11px;
 	
 }
-
-
+.logo-wrap{
+	margin:19px 0;
+}
+.text-right-sm{
+	text-align:right;
+}
+.rtl .text-right-sm{
+	text-align:left;
+}
 
 
 /* Navigation
 ______________________*/
+.navbar-header{
+	text-align:right;
+	float:none;
+}
 .navbar{
 }
 .navbar{
@@ -260,14 +289,13 @@ margin-bottom:0;
 /******************************
 	Theme Box Settings 
 *******************************/
-.tab-content{
-	.left-image-section{
-		border:1px solid #dfdfdf;
-		h4{
-			color:@themeColor;
-			font-family:@baseFamily;
-		}
+.left-image-section{
+	margin-bottom:30px;
+	.img-section{
+		margin-bottom:10px;
 	}
+}
+.tab-content{
 	.left-column{
 		padding:0 10px 0 0;
 		border-right:1px solid @borderColor;
@@ -374,23 +402,51 @@ margin-bottom:0;
 /******************************
 	Pagination Settings 
 *******************************/
-
+.pagination-wrap{
+	padding:19px 0;
+	margin:10px 0;
+	border-top:1px dotted @borderColor;
+	border-bottom:1px dotted @borderColor;
+}
 .theme-pagination{
-	> li > a{
-		border-color: @borderColor;
-		padding:8px 12px 7px;
-		.gradient(white, #dfdede);
-	}
-	> .active{
-		> a,
-		> a:hover, 
-		> a:focus{
-			border-color: @borderColor;	
-			background:@themeColor-2;
+	margin:0;
+	list-style:none;
+	padding:0;
+	> li{
+		display:inline-block;
+		vertical-align:top;
+		> a{
+			color:black;
+			display:inline-block;
+			border-color: @borderColor;
+			background:#e3e2e2;
+			padding:6px 12px 6px;
+			.radius(5px);
+			&:hover, 
+			&:focus{
+				border-color: @borderColor;	
+				color:white;
+				background:@themeColor;
+			}
+	
 		}
+		[class^="icon-"]{
+			line-height:inherit;
+		}
+		&.first,
+		&.last,
+		&.active{
+			> a,
+			> a:hover, 
+			> a:focus{
+				border-color: @borderColor;	
+				color:white;
+				background:@themeColor;
+			}
+			
+		}
+	
 	}
-	
-	
 }
 ::selection{
 	color:@themeColor;
@@ -411,13 +467,10 @@ margin-bottom:0;
 
 }
 #contents{
-	padding:0 10px 0 0;
 }
 #sidebar{
-	padding:0 0 0 20px;
 }
 .rtl #sidebar{
-	padding:0 20px 0 0;
 }
 
 
@@ -430,31 +483,43 @@ margin-bottom:0;
 .nav-tabs {
 	border-bottom:none;
 	> li{
+		margin-bottom:4px;
 		> a{
 			margin:0 4px 0 0;
-			background: @tabs;
+			background: none;
 			font-family:@thirdFamily;
-			border:1px solid @tabs;
-			padding:1px 15px 3px;
-			font-size: 15px;
-			color:white;
+			text-transform:uppercase;
+			color:@tabs;
+			.radius(0);
+			border-style:solid;
+			border-color: #e1e1e1;
+			border-width:2px 0;
+			padding:2px 15px 3px;
+			font-size: 16px;
+			
 			&:focus,
 			&:hover{
-				background: white;
-				color: #565755;
-				border-color:transparent;
+				background: none;
+				color: black;
+				border-style:solid;
+				border-color: #fdd559;
+				border-width:2px 0;
 			}
 		}
 		&.active{
 			a{
-				background: white;
-				color: #565755;
-				border-color:transparent;
+				background: none;
+				color: black;
+				border-style:solid;
+				border-color: #fdd559;
+				border-width:2px 0;
 				&:hover,
 				&:focus{
-					background: white;
-					color: #565755;
-					border-color:transparent;
+					color:black;
+					background: none;
+					border-style:solid;
+					border-color: #fdd559;
+					border-width:2px 0;
 				}
 			}
 		}
@@ -468,8 +533,6 @@ margin-bottom:0;
 }
 .tab-content{
 	padding:15px 9px 10px;
-	background:white;
-	.radius(0 6px 6px);
 	h3{
 		color:@themeColor;
 	}
@@ -498,7 +561,7 @@ margin-bottom:0;
 ************************************/
 .login-section{
 	a{
-		line-height:20px;
+		line-height:25px;
 	}
 }
 .btn{
@@ -537,10 +600,10 @@ margin-bottom:0;
 }
 
 .theme-btn{
-	.gradient(#b1d62e, #739302);
+	.gradient(#f0863d, #ea6130);
 	color:white;
 	text-shadow:1px 1px rgba(0,0,0,0.5);
-	border:1px solid #476e03;
+	border:1px solid #df5825;
 	.box-shadow(0 1px 0 0 rgba(255,255,255,0.25) inset );
 	&:focus,
 	&:hover{
@@ -864,19 +927,28 @@ margin-bottom:0;
 .box-header{
 	margin-bottom:20px;
 	p{
-		font-size:15px;
+		font-size:22px;
+		font-weight:300;
 	}
-	h3{
+	h2{
 		margin-bottom:0;
 	}
 	
 }
-
+.left-icon{
+	margin-top:5px;
+	margin-right:10px;
+	span{
+		color:#d0d0d0;
+	}
+}
 /************************
 	Thumnails Settings 
 *************************/
 .img-thumbnail{
 	width:100%;
+	padding:6px;
+	border-color: @borderColor;
 	.radius(0);
 }
 .thumbnail-lg{
@@ -1002,43 +1074,36 @@ margin-bottom:0;
 
 .sort-bar{
 	margin-bottom:25px;
-	.radius(6px);
-	.gradient(#e6e6e6, #a7a5a8);
-	border:1px solid #a7a5a8;
-	.box-shadow(0 0 0 1px rgba(255,255,255,0.25) inset );
+	padding-bottom:10px;
+	color:black;
+	text-transform: uppercase;
+	border-bottom:1px dotted @borderColor;
+	select{
+		margin:5px;
+	}
 	a{
 		color:@textColor;
 		display:inline-block;
-		margin:8px 10px;
-		.icon-caret-down{
-			color:@themeColor;
-		}
+		margin:5px;
 		[class^="icon-"]{
-			line-height:20px;
+			line-height:inherit;
 		}
 	}
 	.right-side-icons{
 		.active{
-			color: #003399;
+			color: @themeColor;
 		}
 	}
 }
 
 .search-wrap{
-	background:@footerbg;
-	border-top:1px solid @footerbg;
-	border-bottom:1px solid @footerbg;
-	.box-shadow(0 1px 0 0 #4d97f9 inset, 0 -1px 0 0 #4d97f9 inset;);
 	padding:10px 0;
-	.input-lg:focus,
-	.input-lg{
-		border-color: #2370ac;
-		border-right-color:transparent;
+	.form-control{
+		margin:5px 0;
 	}
-	a{
-		line-height:46px;
-		color:white;
-		font-size:20px;
+	.form-control:focus{
+		border-color: #EF823C;
+		border-right-color:transparent;
 	}
 }
 
@@ -1147,53 +1212,27 @@ margin-bottom:0;
 /*  Footer 
 -------------------------------------- */
 #footer-wrap{
-	h3{
-		margin-bottom:10px;
-	}
+}
+.footer-bottom{
+	color: black;
+	padding:25px 0 15px;
+	text-align:center;
+	position:relative;
+	background:url(../images/footer-pattren.png);
 	a{
-		color: @footertext;
-		&:hover{
-			color: @linkHoverColor;
-		}
+		color: @footerBottom;
 	}
-	.inner-section{
-	}
-	.social-icons{
-		margin-bottom:20px;
-		a{
-			color: @footerbg;
-			&:hover{
-				color: @themeColor;
-			}
-		}
-	}
-	.footer-nav{
-		padding-left:20px;
-	}
+	
 }
-#footer{
-	background:@footerbg;
-	padding:30px 0;
-	.feature-section a{
-		color: @linkHoverColor;
-	}
-	ul{
-		li{
-			margin-bottom:7px;
-		}
-	}
-	.social-icons{
-	}
-	p{
-		color:@footertext;
-	}
-	.footer-text{
-		color:@footertext;
-	}
-	.form-inline{
-		margin-bottom:25px;
-	}
+.footer-top-pattren{
+	position:absolute;
+	left:0;
+	right:0;
+	bottom:100%;
+	height:9px;
+	background:url(../images/footer-pattren-2.png) repeat-x;
 }
+
 
 .feature-section{
 	.feature-text{
@@ -1268,13 +1307,6 @@ margin-bottom:0;
 		}
 	}
 }
-.footer-bottom{
-	color: @themeColor;
-	padding:25px 15px 30px;
-	text-align:center;
-	border-top:2px solid @themeColor;
-	background:@footerBottom;
-}
 
 
 /**********************
@@ -1307,8 +1339,8 @@ margin-bottom:0;
 	box-shadow:	0 0 6px rgba(3, 3, 3, 0.2) inset;
 }
 .form-control:focus{
-	border-color:@themeColor;
-	box-shadow:	0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(67, 0, 82, 0.6);
+	border-color:#EF823C;
+	box-shadow:	0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(239, 130, 60, 0.6);
 }
 
 
@@ -1414,20 +1446,6 @@ margin-bottom:0;
 h3{
 	font-size:22px;
 }
-.nav-tabs > li > a{
-	padding:6px 11px 3px;
-}
-.navbar .navbar-nav > li > a {
-    border-radius: 50px;
-    color: #003399;
-    font-size: 13px;
-    margin: 12px 1px;
-    min-width: inherit;
-    padding: 3px 10px;
-    text-align: center;
-    text-shadow: none;
-    text-transform: uppercase;
-}
 }
 @media (max-width: 979px) {
 /***********************
@@ -1446,8 +1464,9 @@ h3{
 }
 
 .navbar .navbar-nav > li > a {
-    padding: 2px 7px;
     text-transform: capitalize;
+	min-width:inherit;
+	padding:10px;
 }
 
 
@@ -1615,7 +1634,6 @@ h3{
 }
 #sidebar,
 #contents{
-	padding:0 0 20px !important;
 }
 /***********************
 	footer Setting
@@ -1624,8 +1642,10 @@ h3{
 	padding:0 15px;
 }
 
-
-
+.rtl .text-right-sm,
+.text-right-sm{
+	text-align:inherit;
+}
 
 }
 @media (max-width: 479px) {
@@ -1670,7 +1690,6 @@ h3{
 	margin-right:0;
 }
 .left-image-section .img-section{
-	float:none;
 	margin:0 0 7px;
 	img{
 		width:100%;
