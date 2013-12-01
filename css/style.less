@@ -12,6 +12,9 @@
 @import "mixins";
 @import "variables";
 
+.@{project}-widget{
+	margin-bottom:25px;
+}
 
 [class^="icon-"],
 [class*=" icon-"] {
@@ -49,7 +52,7 @@ ______________________*/
 	text-transform:@case;
 	
 }
-h1{.heading( normal,  35px,  @altFamily, @headingsColor, 0 0 10px);
+h1{.heading( 100,  36px,  @thirdFamily, #000, 0 0 10px, uppercase);
 	small{
 		font-size:0.666em;
 		display:block;
@@ -57,17 +60,20 @@ h1{.heading( normal,  35px,  @altFamily, @headingsColor, 0 0 10px);
 		font-weight:bold;
 	}
 }
-h2{.heading( 100,  36px,  @thirdFamily, #000, 0 0 10px, uppercase);}
+h2{.heading( 100,  28px,  @thirdFamily, #000, 0 0 10px, uppercase);}
 h3{.heading( normal,  22px,  @thirdFamily, #000, 0 0 10px, uppercase);	}
-h4{.heading( 100,  26px,  @thirdFamily, #000, 0 0 10px, uppercase);}
+h4{.heading( 100,  18px,  @thirdFamily, #000, 0 0 10px, uppercase);}
 h5{.heading( normal,  16px,  @thirdFamily, #000, 0 0 10px, uppercase);}
 
 
 .detailed-recipe{
 	font-family: @secFamily;
-	h3{
-		font-size:23px;
-		font-family:@thirdFamily;
+	.thumbs-wrap{
+		margin-bottom:10px;
+	}
+	.btn{
+		display:block;
+		@media (max-width: 767px){display:inline-black;}
 	}
 }
 storng{
@@ -114,24 +120,24 @@ a.thumbnail{
 		right:0;
 		text-align:center;
 		top:50%;
-		color:white;
+		color:black;
 		margin-top:-0.5em;
 		.opacity(0);
-		transition: all 0.2s ease-in-out 0s;
+		transition: all 0.4s ease-in-out 0s;
 	}
 	img{
 		display:block;
-		transition: all 0.2s ease-in-out 0s;
-		.opacity(0.5);
+		transition: all 0.4s ease-in-out 0s;
+		.opacity(1);
 	}
 	&:focus,
 	&:hover{
 		border-color: @themeColor;
 		.icon-youtube-play{
-			.opacity(1);
+			.opacity(0.8);
 		}
 		img{
-			.opacity(1);
+			.opacity(0.6);
 		}
 	}
 }
@@ -152,6 +158,9 @@ a.thumbnail{
 			padding:3px 6px;
 			background:@gray;
 			.radius(5px);
+			&.active{
+				background:@themeColor;
+			}
 			
 		}
 	}
@@ -159,7 +168,76 @@ a.thumbnail{
 		display:block;
 	}
 }
+.rtl{
+	.thumbs-wrap{
+		[class^="col-"]{
+			> [class^="icon-"]{
+				float:right;
+				margin:3px 0 3px 10px;	
+			}
+		}
+	}
+}
 
+
+.video-wrap{
+	margin-bottom:25px;
+	.thumbnail{
+		margin-bottom:0;
+	}
+}
+.boxes-wrap{
+	margin-top:-70px;
+}
+.white-section{
+	background:rgba(255,255,255,0.8);
+	min-height:140px;
+	border:1px solid white;
+	.box-shadow(0 0 2px #ccc);
+	padding:15px 19px;
+	position:relative;
+	width:33%;
+	float:left;
+	h3{
+		font-size: 20px;
+		line-height:1;
+		margin:0 0 5px;
+		text-transform:none;
+	}
+}
+.yellow-section{
+	.white-section;
+	background:rgba(253, 213, 89, 0.8);
+	border:1px solid #fdd65e;
+	min-height:180px;
+	top:-20px;
+	h3{
+		color:white;
+	}
+	h2{
+		font-size:30px;
+		text-align:center;
+	}
+	&:before{
+		background:url(../images/shadow-bottom.png) no-repeat;
+		display:block;
+		content:"";
+		position:absolute;
+		top:100%;
+		left:0;
+		right:0;
+		height:10px;
+	}
+}
+.rtl{
+	.white-section{
+		float:right;
+	}
+	.yellow-section{
+		.white-section;
+	}
+
+}
 /* Header
 ______________________*/
 #header-wrap{
@@ -222,6 +300,8 @@ ______________________*/
 }
 
 
+
+
 /* Navigation
 ______________________*/
 .navbar-header{
@@ -233,9 +313,9 @@ ______________________*/
 .navbar{
 @color: @navbar;
 @hovercolor: @themeColor;
-background:none;
-margin-bottom:0;
-.box-shadow(none);
+	background:none;
+	margin-bottom:0;
+	.box-shadow(none);
 	.navbar-nav {
 		> li{
 			> a{
@@ -276,10 +356,17 @@ margin-bottom:0;
 .banner-wrap{
 	background:url(../images/banner.png) no-repeat center top;
 	background-size: auto 100%;
+	min-height:599px;
 	color:white;
 	padding:40px 0;
 	margin:0 auto;
+	font-size:34px;
+	h1{
+		font-size:74px;
+		color:white;
+	}
 	p{
+		color:black;
 	}
 }
 .alt-font{
@@ -404,7 +491,6 @@ margin-bottom:0;
 *******************************/
 .pagination-wrap{
 	padding:19px 0;
-	margin:10px 0;
 	border-top:1px dotted @borderColor;
 	border-bottom:1px dotted @borderColor;
 }
@@ -472,6 +558,18 @@ margin-bottom:0;
 }
 .rtl #sidebar{
 }
+.registeration-now{
+	text-align:center;
+	font-size:26px;
+	.border-section;
+	margin-bottom:50px;
+	p{
+		margin-bottom:1em;
+	}
+	.registeration-btn{
+		margin-bottom:-26px;
+	}
+}
 
 
 /**********************
@@ -534,23 +632,7 @@ margin-bottom:0;
 .tab-content{
 	padding:15px 9px 10px;
 	h3{
-		color:@themeColor;
-	}
-	.content-section{
-		color: @textColor;
-		border:1px solid #f4cafe;
-		background:#f5dffa;
-		padding:8px;
-		margin-bottom:20px;
-	}
-}
-.content-section{
-	.icons-list{
-		padding:0;
-		font-size:12px;
-		a{
-			color: @textColor;
-		}
+		font-size:18px;
 	}
 }
 
@@ -581,10 +663,17 @@ margin-bottom:0;
 	}
 }
 .share-btn-group{
+	border-top:1px dotted @borderColor;
+	border-bottom:1px dotted @borderColor;
+	margin:10px 0 25px;
+	padding:5px 0;
 	[class^="icon-"]{
-		color:@themeColor;
+		color:@themeColor-2;
 		display:block;
 		font-size:1.4em;
+	}
+	a{
+		color:black;
 	}
 }
 
@@ -878,9 +967,6 @@ margin-bottom:0;
 		Sidebar Settings 
 ***********************************/
 .sidebar-section{
-	margin-bottom:25px;
-	.white-box{
-	}
 }
 .input-group-btn{
 	[class^="icon-"]{
@@ -911,6 +997,9 @@ margin-bottom:0;
 .icon-star{
 	color: @starActive;
 }
+.right-side-stars{
+	margin-top:0.5em;
+}
 .btn{
 	.icon-star{
 		color: inherit;
@@ -923,23 +1012,41 @@ margin-bottom:0;
 	margin-bottom:40px;
 }
 
-
+.normal-text{
+	font-size:@baseFont;
+	text-transform:none;
+	color: @textColor;
+	p{
+		font-size:@baseFont;
+		text-transform:none;
+		color: @textColor;
+	}
+}
 .box-header{
 	margin-bottom:20px;
 	p{
-		font-size:22px;
+		font-size:18px;
 		font-weight:300;
 	}
-	h2{
+	h1{
 		margin-bottom:0;
+	}
+	.normal-text{
+		.normal-text;
 	}
 	
 }
 .left-icon{
 	margin-top:5px;
-	margin-right:10px;
+	margin-right:15px;
 	span{
 		color:#d0d0d0;
+	}
+}
+.rtl{
+	.left-icon{
+		margin-right:0;
+		margin-left:15px;
 	}
 }
 /************************
@@ -948,6 +1055,7 @@ margin-bottom:0;
 .img-thumbnail{
 	width:100%;
 	padding:6px;
+	margin-bottom:5px;
 	border-color: @borderColor;
 	.radius(0);
 }
@@ -971,17 +1079,17 @@ margin-bottom:0;
 	margin-right:-7px;
 	text-align:center;
 	.thumbnail{
+		border:none;
+		padding:0;
 		text-align:left;
-		border: 1px solid #dfdfdf;
 		width:180px;
 		margin-bottom:19px;
-		margin-right:6px;
+		margin-right:19px;
 		*margin-right:9px;
 		display:inline-block;
 		vertical-align:top;
 		*float:left;
 		.radius(0);
-		padding: 3px;
 		position:relative;
 		
 		.box-shadow(none);
@@ -992,13 +1100,23 @@ margin-bottom:0;
 		}
 		p{
 			margin-bottom:0;
-			color:white;
+			color:black;
 			text-transform:uppercase;
 		}
-		.thumbnail-footer{
-			padding:4px;
-			background:@themeColor-2;
-		}
+	}
+}
+.thumbnail-footer{
+	margin:5px 0;
+	p{
+		margin-bottom:0;
+		color:black;
+		text-transform:uppercase;
+	}
+	&.normal-text{
+		.normal-text;
+	}
+	h5 + p{
+		margin-bottom:10px;
 	}
 }
 .thumbnail-wrap-2{
@@ -1043,14 +1161,12 @@ margin-bottom:0;
 		background:url(../images/chevron.png) no-repeat center center;
 		line-height:29px;
 		margin-top:-0.5em !important;
-		left:-35px;
 	}
 	.bx-next:hover,
 	.bx-next{
 		background:url(../images/chevron-right.png) no-repeat center center;
 		line-height:29px;
 		margin-top:-0.5em !important;
-		right:-35px;
 	}
 }
 
@@ -1109,9 +1225,8 @@ margin-bottom:0;
 
 
 .border-section{
-	min-height:90px;
-	border-bottom:1px dotted @themeColor;
-	padding:0 0 10px;
+	border-bottom:1px dotted @borderColor;
+	padding:0 0 5px;
 	margin: 0 0 20px;
 }
 .step{
@@ -1236,7 +1351,6 @@ margin-bottom:0;
 
 .feature-section{
 	.feature-text{
-		margin-top:9px;
 		color:#010101;
 		font-family: @forthFamily;
 		h5,
@@ -1255,9 +1369,35 @@ margin-bottom:0;
 	padding:2px;
 	margin-right:10px;
 	margin-bottom:10px;
+	&.no-border{
+		border:none;
+	}
+}
+.num-list{
+	list-style:none;
+	*list-style:decimal;
+	counter-reset: li;
+	li{
+		counter-increment: li;
+		position:relative;
+		margin-bottom:25px;
+		&:before{
+			display:inline-block;
+			content: counter(li);
+			color:#fdd559;
+			font-size:33px;
+			line-height:1;
+			position:absolute;
+			top:0;
+			right:100%;
+			margin-right:15px;
+		}
+	}
 }
 .icons-list{
 	list-style:none;
+	padding:0 0 0 10px;
+	margin-bottom:15px;
 	ul{
 		list-style:none;
 		margin-bottom:20px;
@@ -1266,7 +1406,7 @@ margin-bottom:0;
 		margin-bottom:5px;
 		&:before{
 			display:inline-block;
-			content: "\f0da";
+			content: "\f054";
 			color: @caret;
 			width:16px;
 			height:20px;
@@ -1278,7 +1418,7 @@ margin-bottom:0;
 
 
 .rtl .icons-list{
-	list-style:none;
+	padding:0 10px 0 0;
 	margin:0;
 	ul{
 		list-style:none;
@@ -1287,7 +1427,7 @@ margin-bottom:0;
 	li{
 		&:before{
 			display:inline-block;
-			content: "\f0d9";
+			content: "\f053";
 			margin-right:0;
 			margin-left:10px;
 			font-family: 'FontAwesome';
@@ -1391,6 +1531,9 @@ margin-bottom:0;
 .text-red{
 	color:@readmore;
 }
+.text-gray{
+	color:@icons;
+}
 
 
 .fl{ float:left}
@@ -1456,9 +1599,6 @@ h3{
 	display:block;
 	width:200px;
 }
-.login-section{
-	padding:8px;
-}
 .navbar > .container .navbar-brand{
 	width:200px;
 }
@@ -1488,18 +1628,6 @@ h3{
 	margin:0;
 	a{
 		margin:0 0 5px;
-		.radius(6px);
-		&:focus,
-		&:hover{
-			border-bottom-color: @borderColor;
-		}
-	}
-}
-.nav-tabs > li.active a{
-	border-bottom-color: @borderColor;
-	&:focus,
-	&:hover{
-		border-bottom-color: @borderColor;
 	}
 }
 	.filter-list li{
@@ -1570,6 +1698,13 @@ h3{
 	
 }
 
+.login-section{
+	padding:23px 8px;
+}
+.navbar-toggle{
+	margin:20px 0;
+}
+
 .logo{
 	width:250px;
 }
@@ -1617,7 +1752,6 @@ h3{
 
 .pagination-wrap ul{
 	text-align: center;
-	margin-bottom:15px;
 }
 /***********************
 	Sidebar Setting
@@ -1646,6 +1780,29 @@ h3{
 .text-right-sm{
 	text-align:inherit;
 }
+#contents{
+	padding:0;
+}
+.boxes-wrap{
+	margin-top:0;
+}
+.yellow-section,
+.white-section{
+	float:none;
+	width:100%;
+	top:0;
+	margin:10px 0;
+}
+.right-side-stars{
+	display:none;
+}
+.icons-list,
+.tab-content{
+	padding:0;
+}
+.thumbnail{
+	width:100%;
+}
 
 }
 @media (max-width: 479px) {
@@ -1659,9 +1816,11 @@ h3{
 	width:200px;
 }
 .login-section{
-	padding-left:0;
+	padding:0 0 10px;
 }
-	
+.navbar-toggle{
+	margin-bottom:5px;
+}	
 /***********************
 	buttons Setting
 ************************/
@@ -1689,10 +1848,14 @@ h3{
 .thumbnail-wrap{
 	margin-right:0;
 }
+.thumbnail-wrap .thumbnail{
+	margin-right:0;
+}
 .left-image-section .img-section{
 	margin:0 0 7px;
 	img{
 		width:100%;
 	}
 }
+
 }

@@ -1,0 +1,534 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> -->
+
+<!--[if IE 6]>
+<html xmlns="http://www.w3.org/1999/xhtml" id="ie6">
+<![endif]-->
+<!--[if IE 7]>
+<html xmlns="http://www.w3.org/1999/xhtml" id="ie7">
+<![endif]-->
+<!--[if IE 8]>
+<html xmlns="http://www.w3.org/1999/xhtml" id="ie8">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!--<![endif]-->
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Recipe Page</title>
+
+	<!-- Google Fonts -->    
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Dosis:400,200,300,500,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,600,700' rel='stylesheet' type='text/css'>
+	<!-- Google Fonts -->
+
+
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="css/bootstrap-theme.css" />
+    <link type="text/css" rel="stylesheet" href="css/font-awesome.css" />
+    <link type="text/css" rel="stylesheet" href="css/jquery.bxslider.css" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="stylesheet" href="css/rtl.css" />
+    
+    <!--[if lte IE 8]>
+    <link type="text/css" rel="stylesheet" href="css/ie.css" />
+    <script type="text/javascript" src="js/modernizr.min.js"></script>
+    <![endif]-->
+    
+    <!--[if lte IE 6]>
+    <script type="text/javascript" src="js/belated.js"></script>
+    <![endif]-->
+    <!--[if IE lte 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/holder.js"></script>
+    <script type="text/javascript" src="js/jquery.bxslider.js"></script>
+    <script type="text/javascript">
+	$(function(){
+		slides = 4;
+	if ($(window).width() <= 979){
+		slides = 3;
+		}
+	if($(window).width() <= 767){
+		slides = 2;
+	}
+	  $('.bxslider').bxSlider({
+		  	auto: true,
+			minSlides: slides,
+			maxSlides: slides + 1,
+			moveSlides: 1,
+			slideMargin: 14,
+			slideWidth: 180,
+			pager: false
+	  });
+
+	});
+	</script>
+    
+</head>
+
+<body id="page-name" class="rtl">
+
+<div id="container-fluid">
+
+<!--header start -->
+<div id="header-wrap">
+    <div id="header">
+        <div class="header-top">
+            <div class="pattren-bottom"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3 col-xs-6 text-center pull-left">
+                            <div class="logo-wrap">
+                                <a href="#" class="logo"><img src="images/logo.png" alt="" /></a>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <div role="navigation" class="navbar">
+                                <div class="navbar-header">
+                                    <button data-target=".bs-navbar-collapse" data-toggle="collapse" 
+                                    type="button" class="navbar-toggle">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                    <span class="social-icons pull-right">
+                                        <a href="#" class="facebook"><span class="icon-facebook"></span></a>
+                                        <a href="#" class="google-plus"><span class="icon-google-plus"></span></a>
+                                        <a href="#" class="twitter"><span class="icon-twitter"></span></a>
+                                        <a href="#" class="youtube"><span class="icon-youtube"></span></a>
+                                        <a href="#" class="pinterest"><span class="icon-pinterest"></span></a>
+                                    </span>
+                                    <span class="pull-right login-section">
+                                        <a href="#myModal-2" role="button"  data-toggle="modal"><span>Register</span></a>
+                                        <span class="divider">|</span>
+                                        <a href="#myModal" role="button"  data-toggle="modal">Login</a>
+                                    </span>
+                                    
+                                    
+                                </div><!-- navbar-header -->
+                                <nav role="navigation" class="navbar-collapse bs-navbar-collapse collapse">
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li class="active"><a href="#">Home</a></li>
+                                        <li><a href="#">Recipes</a></li>
+                                        <li><a href="#">Cuisine</a></li>
+                                        <li><a href="#">Food Type</a></li>
+                                        <li><a href="#">Intergidents </a></li>
+                                        <li><a href="#">Submit A Recipe</a></li>
+                                    </ul>
+                                </nav><!-- navbar-collapse -->
+                            </div><!-- navbar -->
+                        </div><!-- col-sm-9 -->
+                    </div><!-- row -->
+                </div><!-- container -->
+            </div><!-- header-top -->
+    </div>
+</div>
+<!--header end -->
+<!--main start -->
+<div id="main-wrap">
+	<div class="container">
+        <div id="main" class="row author-gallery-wrap author-gallery-wrap-2">
+        	<div class="col-sm-8 col-md-9" id="contents">
+            	<div class="box-header clearfix">
+                    <p class="pull-right right-side-stars">
+                        <a href="#" class="icon-star"></a>
+                        <a href="#" class="icon-star"></a>
+                        <a href="#" class="icon-star"></a>
+                        <a href="#" class="icon-star"></a>
+                        <a href="#" class="icon-star-empty"></a>
+                    </p>
+	            	<h1>Slow Cooker Chicken and Dumplings</h1>
+                    <div class="row normal-text">
+                    	<div class="col-md-3 col-sm-4">
+                        	<p>By <span class="black-text">Katy Greenwood</span></p>
+                        </div>
+                        <div class="col-md-3 col-sm-4">
+                        	<p>October 09, 2003</p>
+                        </div>
+                        <div class="col-md-3 col-sm-4">
+                        	<p><span class="black-text">114 Reviews</span></p>
+                        </div>
+                    </div>
+					
+                </div>
+	            <div class="row detailed-recipe">
+                    <div class="col-sm-4">
+                        <img class="thumbnail" alt="" src="images/thumb-medium.png">
+                    </div>
+                    <div class="col-sm-8">
+	                    <div class="thumbs-wrap border-section">
+                        	<div class="row">
+                                <div class="col-sm-4">
+                                    <span class="icon-time active icon-2x"></span>
+                                    <p>
+                                        <span class="black-text">READY IN</span>
+                                        <span>6 hours 10 mins</span>
+                                    </p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <span class="icon-time active icon-2x"></span>
+                                    <p>
+                                        <span class="black-text">READY IN</span>
+                                        <span>6 hours 10 mins</span>
+                                    </p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <span class="icon-time active icon-2x"></span>
+                                    <p>
+                                        <span class="black-text">READY IN</span>
+                                        <span>6 hours 10 mins</span>
+                                    </p>
+                                </div>
+							</div>
+                        </div>
+                        <p>This is an easy slow cooker recipe that cooks while you are at work! It is wonderful on a cold, snowy day. I have four children who are picky eaters, and they LOVE this! Enjoy!" — Janiece Mason</p>
+                        <p>
+                        	<span class="icon-tag text-gray"></span>
+                        	<span class="black-text"> Stew, Main dish, Whole chicken</span>
+                        </p>
+                    </div>
+                </div>
+                
+			    <div class="btn-group btn-group-justified share-btn-group">
+                    <a href="#" class="btn">
+                        <span class="icon-file"></span>
+                        Add Review
+                    </a>
+                    <a href="#" class="btn">
+                        <span class="icon-save"></span>
+                        Save Recipe	
+                    </a>
+                    <a href="#" class="btn">
+                        <span class="icon-print"></span>
+                        Print
+                    </a>
+                    <a href="#" class="btn">
+                        <span class="icon-envelope"></span>
+                        Email
+                    </a><a href="#" class="btn">
+                        <span class="icon-facebook"></span>
+                        Facebook
+                    </a>
+                    
+                    <a href="#" class="btn">
+                        <span class="icon-pinterest"></span>
+                        Pinterest
+                    </a>
+                    <a href="#" class="btn">
+                        <span class="icon-twitter"></span>
+                        Twitter
+                    </a>
+                </div>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#tab-1">Ingredients and Methodes</a></li>
+                    <li><a data-toggle="tab" href="#tab-2">Photos (9)</a></li>
+                    <li><a data-toggle="tab" href="#tab-3">Ratings & Reviews (144)</a></li>
+                </ul>
+                <div class="tab-content">
+                	<div class="tab-pane active" id="tab-1">
+                        <div class="theme-box">
+                            <div class="box-body">
+                                <div class="inner-section">
+                                	<div class="row">
+	                                    <div class="col-sm-6">
+                                            <h3>Ratings & Reviews (144)</h3>
+		                                    <h5>Soup</h5>
+                                            <ul class="icons-list">
+                                                <li>2 cloves garlic $0.16</li>
+                                                <li>1 medium yellow onion $0.57</li>
+                                                <li>3 ribs celery $0.80</li>
+                                                <li>&frac12; lb (3-4) carrots $0.55</li>
+                                                <li>1 large (3/4 lb.) chicken breast $1.49*</li>
+                                                <li>1 whole bay leaf $0.15</li>
+                                                <li>1 tsp dried basil $0.10</li>
+                                                <li>1 tsp dried thyme $0.10</li>
+                                                <li>freshly cracked pepper $0.05</li>
+                                                <li>4 cups water $0.00</li>
+                                                <li>1 tsp salt (plus more to taste) $0.05</li>
+                                            </ul>
+		                                    <h3>Dumplings</h3>
+                                            <ul class="icons-list">
+                                                <li>1&frac12; cups all-purpose flour $0.21</li>
+                                                <li>1&frac12; tsp baking powder $0.15</li>
+                                                <li>&frac12; tsp salt $0.02</li>
+                                                <li>&frac12; Tbsp dried parsley $0.15</li>
+                                                <li>6 Tbsp cold butter $0.90</li>
+                                                <li>&frac34; tsp sugar $0.01</li>
+                                                <li>&frac34; cup milk $0.41</li>
+        
+                                            </ul>
+                                            
+                                        </div>
+                                    	<div class="col-sm-6">
+                                        	<h3>Methodes</h3>
+                                            <ul class="num-list">
+                                            	<li>
+                                                Mince the garlic, dice the onion, and slice the carrots and celery into small pieces. Add the garlic, onion, carrot, celery, bay leaf, basil, thyme, chicken breast, water, and some freshly cracked pepper to a slow cooker. Stir to combine and then cook on high for four hours or low for eight hours.
+                                                </li>
+                                                <li>
+                                                Mince the garlic, dice the onion, and slice the carrots and celery into small pieces. Add the garlic, onion, carrot, celery, bay leaf, basil, thyme, chicken breast, water, and some freshly cracked pepper to a slow cooker. Stir to combine and then cook on high for four hours or low for eight hours.
+                                                </li>
+                                                <li>
+                                                Mince the garlic, dice the onion, and slice the carrots and celery into small pieces. Add the garlic, onion, carrot, celery, bay leaf, basil, thyme, chicken breast, water, and some freshly cracked pepper to a slow cooker. Stir to combine and then cook on high for four hours or low for eight hours.
+                                                </li>
+                                                <li>
+                                                Mince the garlic, dice the onion, and slice the carrots and celery into small pieces. Add the garlic, onion, carrot, celery, bay leaf, basil, thyme, chicken breast, water, and some freshly cracked pepper to a slow cooker. Stir to combine and then cook on high for four hours or low for eight hours.
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+									<h2>You may also like</h2>
+                                    <div class="row">
+                                    	<div class="col-md-3 col-sm-6">
+                                            <img src="images/thumbnail.png" alt="" class="img-thumbnail">
+                                            <div class="thumbnail-footer">
+                                                <p>Chicken Cordon Bleu II</p>
+                                                <p>
+                                                    <a href="#" class="icon-star"></a>
+                                                    <a href="#" class="icon-star"></a>
+                                                    <a href="#" class="icon-star"></a>
+                                                    <a href="#" class="icon-star"></a>
+                                                    <a href="#" class="icon-star-empty"></a>
+                                                </p>
+                                            </div><!-- thumbnail-footer -->
+                                        </div>
+                                        <div class="col-md-3 col-sm-6">
+                                            <img src="images/thumbnail.png" alt="" class="img-thumbnail">
+                                            <div class="thumbnail-footer">
+                                                <p>Chicken Cordon Bleu II</p>
+                                                <p>
+                                                    <a href="#" class="icon-star"></a>
+                                                    <a href="#" class="icon-star"></a>
+                                                    <a href="#" class="icon-star"></a>
+                                                    <a href="#" class="icon-star"></a>
+                                                    <a href="#" class="icon-star-empty"></a>
+                                                </p>
+                                            </div><!-- thumbnail-footer -->
+                                        </div>
+                                        <div class="col-md-3 col-sm-6">
+                                            <img src="images/thumbnail.png" alt="" class="img-thumbnail">
+                                            <div class="thumbnail-footer">
+                                                <p>Chicken Cordon Bleu II</p>
+                                                <p>
+                                                    <a href="#" class="icon-star"></a>
+                                                    <a href="#" class="icon-star"></a>
+                                                    <a href="#" class="icon-star"></a>
+                                                    <a href="#" class="icon-star"></a>
+                                                    <a href="#" class="icon-star-empty"></a>
+                                                </p>
+                                            </div><!-- thumbnail-footer -->
+                                        </div>
+                                        <div class="col-md-3 col-sm-6">
+                                            <img src="images/thumbnail.png" alt="" class="img-thumbnail">
+                                            <div class="thumbnail-footer">
+                                                <p>Chicken Cordon Bleu II</p>
+                                                <p>
+                                                    <a href="#" class="icon-star"></a>
+                                                    <a href="#" class="icon-star"></a>
+                                                    <a href="#" class="icon-star"></a>
+                                                    <a href="#" class="icon-star"></a>
+                                                    <a href="#" class="icon-star-empty"></a>
+                                                </p>
+                                            </div><!-- thumbnail-footer -->
+                                        </div>
+                                    </div>
+                                    
+                                </div><!-- inner-section -->
+                            </div><!-- box-body -->
+                        </div><!-- theme-box  -->
+                    </div>
+                    <div class="tab-pane" id="tab-2"></div>
+					<div class="tab-pane" id="tab-3"></div>
+                </div>
+            </div><!-- col-sm-8 col-md-8 -->
+            <aside id="sidebar" class="col-sm-4 col-md-3">
+            	<div class="sidebar-section rb-widget">
+                    <div class="search-wrap">	
+                        <div class="container">
+                            <div class="row">
+	                            <h3>Search all of our recipes</h3>
+                                <div class="input-group">
+                                    <input type="text" class="form-control">
+                                    <span class="input-group-btn">
+                                      <button class="btn theme-btn" type="button"><span class="icon-search"></span></button>
+                                    </span>
+                                </div>
+                                <a href="#">Advance Search</a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-section rb-widget">
+                    	<img class="img-thumbnail" src="holder.js/100%x280" alt=""/>
+                </div><!-- sidebar-section -->
+        		<div class="sidebar-section rb-widget">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab-11" data-toggle="tab">Recipes (79, 054)</a></li>
+                        <li><a href="#tab-12" data-toggle="tab">Photos (23, 090)</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab-11">
+                            <div class="feature-section clearfix">
+                                <div class="feature-img">
+                                    <img src="images/thumb-small.png" alt=""	 />
+                                </div>
+                                <div class=" feature-text">
+                                    <h5>Snapper Deal</h5>
+                                    <p><span>By</span> Katy Greenwood</p>
+                                    <p>
+                                        <a class="icon-star" href="#"></a>
+                                        <a class="icon-star" href="#"></a>
+                                        <a class="icon-star" href="#"></a>
+                                        <a class="icon-star" href="#"></a>
+                                        <a class="icon-star-empty" href="#"></a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="feature-section clearfix">
+                                <div class="feature-img">
+                                    <img src="images/thumb-small.png" alt=""	 />
+                                </div>
+                                <div class=" feature-text">
+                                    <h5>Snapper Deal</h5>
+                                    <p><span>By</span> Katy Greenwood</p>
+                                    <p>
+                                        <a class="icon-star" href="#"></a>
+                                        <a class="icon-star" href="#"></a>
+                                        <a class="icon-star" href="#"></a>
+                                        <a class="icon-star" href="#"></a>
+                                        <a class="icon-star-empty" href="#"></a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="feature-section clearfix">
+                                <div class="feature-img">
+                                    <img src="images/thumb-small.png" alt=""	 />
+                                </div>
+                                <div class=" feature-text">
+                                    <h5>Snapper Deal</h5>
+                                    <p><span>By</span> Katy Greenwood</p>
+                                    <p>
+                                        <a class="icon-star" href="#"></a>
+                                        <a class="icon-star" href="#"></a>
+                                        <a class="icon-star" href="#"></a>
+                                        <a class="icon-star" href="#"></a>
+                                        <a class="icon-star-empty" href="#"></a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="feature-section clearfix">
+                                <div class="feature-img">
+                                    <img src="images/thumb-small.png" alt=""	 />
+                                </div>
+                                <div class=" feature-text">
+                                    <h5>Snapper Deal</h5>
+                                    <p><span>By</span> Katy Greenwood</p>
+                                    <p>
+                                        <a class="icon-star" href="#"></a>
+                                        <a class="icon-star" href="#"></a>
+                                        <a class="icon-star" href="#"></a>
+                                        <a class="icon-star" href="#"></a>
+                                        <a class="icon-star-empty" href="#"></a>
+                                    </p>
+                                </div>
+                            </div>
+                            <a href="#" class="theme-btn btn">View All</a> 
+                        </div>
+                        <div class="tab-pane" id="tab-12"></div>
+                    </div>
+                </div>
+                <div class="sidebar-section rb-widget">
+                    <h3><span>Find us on</span>  facebook</h3>
+                	<img src="images/fb-members.png" alt="" />
+                </div><!-- sidebar-section -->
+                
+            </aside><!--sidebar col-sm-4 col-md-3-->
+        </div>
+    </div>
+</div>
+<!--main end -->
+
+
+<!--footer start -->
+<div id="footer-wrap">
+	<footer id="footer">
+        <div id="footer-bottom">
+            <div class="footer-bottom">
+            <div class="footer-top-pattren"></div>
+                <div class="container">
+                    <ul class="list-inline">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#">Recipes</a></li>
+                        <li><a href="#">Cuisine</a></li>
+                        <li><a href="#">Food Type</a></li>
+                        <li><a href="#">Intergidents </a></li>
+                        <li><a href="#">Submit A Recipe</a></li>
+                    </ul>
+                    <p><span>&copy; 2013 Scripps Networks, LLC. All Rights Reseved </span></p>
+                </div>    
+            </div>
+        </div>
+	</footer>
+</div>
+<!--footer end -->
+
+</div><!--container-fluid -->
+<div id="myModal" class="modal fade signin-model" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="model-wrap">
+        <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Log In</h3>
+        </div>
+        <div class="modal-body">
+            <form  class="row">
+                <div class="col-sm-12">
+                <label>Enter Your Email Address</label>    
+                <p><input type="text" placeholder="Plese Enter Your Email Address" class="form-control"></p>
+                <label>Enter Your Password</label>    
+                <p><input type="text" placeholder="Password" class="form-control"></p>
+                <p class="clearfix"><button class="btn btn-primary col-sm-6">Log In</button></p>
+                <p><label>OR</label></p>
+                <p class="clearfix"><button class="btn btn-primary col-sm-6"><span class="icon-facebook"></span> Log In with Facebook</button></p>
+                <p class="clearfix"><button class="btn btn-info col-sm-6"><span class="icon-twitter"></span> Log In with Twitter </button></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="myModal-2" class="modal fade signin-model" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="model-wrap">
+        <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Register</h3>
+        </div>
+        <div class="modal-body">
+            <form  class="row">
+                <div class="col-sm-12">
+                    <label>Name</label>    
+                    <p><input type="text" placeholder="Full Name" class="form-control"></p>
+                    <label>User Name</label>    
+                    <p><input type="text" placeholder="Choose a User Name" class="form-control"></p>
+                    <label>Email Address</label>    
+                    <p><input type="text" placeholder="Plese Enter Your Email Address" class="form-control"></p>
+                    <label>Password</label>    
+                    <p><input type="text" placeholder="Password" class="form-control"></p>
+                    <label>Confirm Password</label>    
+                    <p><input type="text" placeholder="Confirm Password" class="form-control"></p>
+                    <button class="btn btn-primary col-sm-6 col-xs-6">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

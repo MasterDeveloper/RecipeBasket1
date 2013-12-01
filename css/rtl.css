@@ -69,9 +69,6 @@
   float: left;
   margin-left: 15px;
 }
-.rtl .navbar-header {
-  float: right;
-}
 .rtl .container > .navbar-header,
 .rtl .container > .navbar-collapse {
   margin: 0 -15px;
@@ -98,13 +95,25 @@
   margin-right: 0;
   margin-left: 5px;
 }
+.rtl .num-list li:before {
+  right: auto;
+  left: 100%;
+  margin-right: 0;
+  margin-left: 15px;
+}
 @media (max-width: 1200px) {
   .rtl [class^="col-lg-"] {
     float: inherit;
   }
+  .rtl [class^="col-md-"] {
+    float: right;
+  }
 }
 @media (max-width: 979px) {
   .rtl [class^="col-md-"] {
+    float: none;
+  }
+  .rtl [class^="col-sm-"] {
     float: right;
   }
   .rtl #header-left {
@@ -124,20 +133,17 @@
   .rtl #header-left {
     float: left;
   }
-  .rtl [class^="col-md-"] {
+  .rtl #header-right {
+    float: none;
+  }
+  .rtl .navbar-nav > li {
     float: none;
   }
   .rtl [class^="col-sm-"] {
     float: none;
   }
-  .rtl #header-right {
-    float: none;
-  }
   .rtl [class^="col-xs-"] {
     float: right;
-  }
-  .rtl .navbar-nav > li {
-    float: none;
   }
   .rtl #footer-wrap .footer-nav {
     padding: 0;
@@ -178,7 +184,6 @@
   margin: 0 0 0 5px;
 }
 .rtl .icons-list {
-  padding: 0 15px;
   text-align: right;
 }
 .rtl .feature-img {
@@ -191,7 +196,6 @@
 }
 .rtl .left-image-section .img-section {
   float: right;
-  margin: 0 0 15px 20px;
 }
 .rtl .btn-group > .btn {
   float: right;
